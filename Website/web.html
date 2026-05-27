@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kavindu Sahan | Cybersecurity Enthusiast</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #eef2ff;
+      color: #0a0c15;
+      transition: background 0.3s ease, color 0.2s ease;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* NEW COLOR THEME: Dark mode rich deep violet + teal accents */
+    body.dark {
+      background: #0d0f1c;
+      color: #e9ecf5;
+    }
+
+    body.dark .card {
+      background: #14182b;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6);
+      border: 1px solid #2a2f4b;
+    }
+
+    body.dark .social-link {
+      background: #0f1222;
+      border-color: #2a2f4b;
+      color: #e2e8f0;
+    }
+
+    body.dark .social-link:hover {
+      background: #2a2f5e;
+      border-color: #5f7fbf;
+    }
+
+    body.dark .section-title {
+      color: #a0f0ff;
+      border-bottom-color: #48cae4;
+    }
+
+    body.dark .mode-toggle {
+      background: #1e1f3a;
+      border-color: #48cae4;
+      color: #fee69c;
+    }
+
+    body.dark .mode-toggle:hover {
+      background: #2e2f55;
+    }
+
+    body.dark .footer-note {
+      color: #9aa2cf;
+    }
+
+    /* light mode new theme: soft lavender + fresh teal */
+    body:not(.dark) {
+      background: #f3f0ff;
+    }
+
+    body:not(.dark) .card {
+      background: #ffffff;
+      box-shadow: 0 20px 30px -12px rgba(80, 70, 150, 0.1);
+      border: 1px solid #e0d6ff;
+    }
+
+    body:not(.dark) .social-link {
+      background: #f8f5ff;
+      border-color: #cdc4f0;
+      color: #2d2b4e;
+    }
+
+    body:not(.dark) .social-link:hover {
+      background: #e9e2ff;
+      border-color: #7c6bc0;
+      color: #1f1b3a;
+    }
+
+    body:not(.dark) .section-title {
+      color: #4b3b8c;
+      border-bottom-color: #6d5ac6;
+    }
+
+    body:not(.dark) .connect-btn {
+      background: #4b3b8c;
+      color: white;
+    }
+
+    body:not(.dark) .connect-btn:hover {
+      background: #6d5ac6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      margin-bottom: 2rem;
+      transition: all 0.25s;
+    }
+
+    .profile-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .profile-info {
+      flex: 2;
+    }
+
+    .avatar {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+    }
+
+    .avatar svg {
+      width: 130px;
+      height: 130px;
+      background: linear-gradient(145deg, #342d6e, #1f2b5c);
+      border-radius: 50%;
+      padding: 12px;
+      box-shadow: 0 12px 22px -8px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .avatar svg:hover {
+      transform: scale(1.02);
+    }
+
+    .avatar img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 12px 22px -8px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .avatar img:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #352b6e, #2c5282);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark h1 {
+      background: linear-gradient(135deg, #bbcdff, #7bc9f0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #4a5b8c;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid #7060c0;
+      padding-left: 1rem;
+    }
+
+    body.dark .tagline {
+      color: #96b8e0;
+      border-left-color: #6aa9ff;
+    }
+
+    .connect-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #2c3e6d;
+      color: white;
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+      margin-top: 0.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .connect-btn:hover {
+      background: #495f9e;
+      transform: translateY(-2px);
+    }
+
+    body.dark .connect-btn {
+      background: #2a2f66;
+    }
+
+    body.dark .connect-btn:hover {
+      background: #434b8b;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.3rem;
+      display: inline-block;
+      border-bottom: 3px solid;
+      padding-bottom: 6px;
+    }
+
+    .links-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.85rem 1.7rem;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      font-size: 1rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .social-link i {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .mode-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: white;
+      border: 1px solid #b9c3e8;
+      border-radius: 60px;
+      padding: 12px 20px;
+      font-weight: 700;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 999;
+      transition: 0.2s;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .mode-toggle:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 680px) {
+      .profile-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .tagline {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+      }
+      .connect-btn {
+        justify-content: center;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .links-grid {
+        justify-content: center;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .container {
+        padding: 1rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* subtle animation for cards */
+    .card {
+      transition: transform 0.2s ease, background 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- main profile card -->
+  <div class="card">
+    <div class="profile-wrapper">
+      <div class="profile-info">
+        <h1>Kavindu Sahan</h1>
+        <div class="tagline">Cybersecurity Enthusiast | Penetration Tester</div>
+        <a href="#connect-section" class="connect-btn" id="connectScrollBtn">
+          <span>⚡</span> Connect with me
+        </a>
+      </div>
+      <div class="avatar">
+        <!-- fresh avatar with shield/cyber vibe -->
+        <img src="my.jpg" alt="Kavindu Sahan portrait">
+      </div>
+    </div>
+  </div>
+
+  <!-- Connect Section: all functional links including About Me -->
+  <div class="card section-card" id="connect-section">
+    <h2 class="section-title">🔗 Connect & Links</h2>
+    <div class="links-grid">
+      <!-- About Me: will open portfolio (replace link later) -->
+      <a href="#" id="aboutMeLink" target="_blank" class="social-link" rel="noopener noreferrer">
+        <i>🌟</i> About Me
+      </a>
+      <!-- Email link -->
+      <a href="mailto:kavindusahan821@gmail.com" target="_blank" class="social-link" rel="noopener noreferrer">
+        <i>📧</i> Email
+      </a>
+      <!-- GitHub link (Kavindu's github: updated) -->
+      <a href="https://github.com/Sahan7768" target="_blank" class="social-link" rel="noopener noreferrer">
+        <i>🐙</i> GitHub
+      </a>
+      <!-- Blog -->
+      <a href="http://localhost:8080/#cyber-security-hub-" target="_blank" class="social-link" rel="noopener noreferrer">
+        <i>📝</i> Blog
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/sahan-chandrapala-62624a38a/" target="_blank" class="social-link" rel="noopener noreferrer">
+        <i>🔗</i> LinkedIn
+      </a>
+    </div>
+    <p style="margin-top: 1.2rem; font-size: 0.85rem; opacity:0.7;">✨ Click any link — all open in new tab • Portfolio ready for your custom URL</p>
+  </div>
+
+  <div class="footer-note">
+    <span>⚙️ Red team mindset • Offensive security • Capture The Flag</span>
+  </div>
+</div>
+
+<!-- Dark/Light mode toggle button -->
+<button class="mode-toggle" id="themeToggle" aria-label="Switch dark/light mode">
+  🌙 Dark Mode
+</button>
+
+<script>
+  (function() {
+    // Theme toggle with local storage & new color theme
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+      toggleBtn.innerHTML = '☀️ Light Mode';
+    } else {
+      body.classList.remove('dark');
+      toggleBtn.innerHTML = '🌙 Dark Mode';
+    }
+    
+    toggleBtn.addEventListener('click', () => {
+      if (body.classList.contains('dark')) {
+        body.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        toggleBtn.innerHTML = '🌙 Dark Mode';
+      } else {
+        body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.innerHTML = '☀️ Light Mode';
+      }
+    });
+    
+    // Smooth scroll for Connect button
+    const connectScrollBtn = document.getElementById('connectScrollBtn');
+    if (connectScrollBtn) {
+      connectScrollBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    }
+    
+    // ========== EDIT YOUR PORTFOLIO WEBSITE LINK HERE ==========
+    // Replace the placeholder with your actual portfolio URL when ready.
+    // Example: "https://kavindusahan.dev" or your custom domain.
+    const yourPortfolioURL = "https://your-portfolio-website.com";  // <--- CHANGE TO YOUR REAL LINK
+    const aboutLink = document.getElementById('aboutMeLink');
+    if (aboutLink) {
+      aboutLink.href = yourPortfolioURL;
+    }
+    // ============================================================
+    
+    // Extra: ensure all external links have target blank
+    const allExtLinks = document.querySelectorAll('.social-link');
+    allExtLinks.forEach(link => {
+      if (!link.getAttribute('target')) {
+        link.setAttribute('target', '_blank');
+      }
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+  })();
+</script>
+</body>
+</html>
